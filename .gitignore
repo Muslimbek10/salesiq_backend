@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.spec
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# Environment secrets — NEVER commit this
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Migrations (keep in version control for teams, but listing for reference)
+# apps/*/migrations/*.py  ← do NOT ignore migrations
+
+# Coverage
+.coverage
+htmlcov/
