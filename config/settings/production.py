@@ -16,7 +16,7 @@ DEBUG = False
 # e.g., ALLOWED_HOSTS=yourdomain.com,www.yourdomain.com
 ALLOWED_HOSTS = [
     host.strip()
-    for host in __import__("os").environ.get("ALLOWED_HOSTS", "").split(",")
+    for host in __import__("os").environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
     if host.strip()
 ]
 
