@@ -57,13 +57,8 @@ CORS_ALLOW_ALL_ORIGINS = False
 # LOGGING — Write to file in production
 # ============================================================
 
-LOGGING["handlers"]["file"] = {                 # noqa: F405
-    "class": "logging.FileHandler",
-    "filename": BASE_DIR / "logs" / "django.log",  # noqa: F405
-    "formatter": "verbose",
-}
-LOGGING["root"]["handlers"] = ["console", "file"]   # noqa: F405
-LOGGING["root"]["level"] = "WARNING"                 # noqa: F405
+LOGGING["root"]["handlers"] = ["console"]   # noqa: F405
+LOGGING["root"]["level"] = "WARNING"        # noqa: F405
 
 
 # ============================================================
