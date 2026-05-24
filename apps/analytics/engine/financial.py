@@ -86,9 +86,9 @@ def compute_financial_analytics(date_from, date_to):
         "best_month":     best_month,
         "worst_month":    worst_month,
         "totals": {
-            "revenue":          round(grand_revenue, 2),
-            "cost":             round(grand_cost, 2),
-            "profit":           round(grand_profit, 2),
+            "total_revenue":    round(grand_revenue, 2),
+            "total_cost":       round(grand_cost, 2),
+            "total_profit":     round(grand_profit, 2),
             "gross_margin_pct": calculate_gross_margin(grand_revenue, grand_cost),
         },
     }
