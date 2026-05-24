@@ -26,7 +26,7 @@ import logging
 
 from django.http import StreamingHttpResponse
 from django.utils import timezone
-from django.db.models import Count, Sum
+from django.db.models import Avg, Count, Sum
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
@@ -224,6 +224,7 @@ class SaleViewSet(ModelViewSet):
             total_cost=Sum("total_cost"),
             total_transactions=Count("id"),
             total_units_sold=Sum("quantity"),
+            avg_order_value=Avg("total_amount"),
         )
 
         return Response({
@@ -232,4 +233,5 @@ class SaleViewSet(ModelViewSet):
             "total_cost":         float(totals["total_cost"]         or 0),
             "total_transactions": totals["total_transactions"]       or 0,
             "total_units_sold":   totals["total_units_sold"]         or 0,
+            "avg_order_value":    round(float(totals["avg_order_value"] or 0), 2),
         })
